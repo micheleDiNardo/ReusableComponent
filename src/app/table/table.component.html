@@ -1,0 +1,37 @@
+<br>
+<br>
+<div class="container m-7">
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let c of columns">{{c}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of users; let i = index">
+            <th scope="row">{{u.id}}</th>
+            <td>{{u.nome}}</td>
+            <td>{{u.cognome}}</td>
+            <td>{{u.eta}}</td>
+            <td>
+              <app-button text="Elimina" (buttonClick)="deleteUser(i)"></app-button>
+            </td>
+            <td>
+              <app-button text="Aggiorna" (buttonClick)="updateUser(i)"></app-button>
+            </td>
+          </tr>
+      </table>
+</div>
+<app-button [text]="text" (buttonClick)="addUser()"></app-button>
+</div>
+
+<br> <br>
+
+<div class="container m-7" *ngIf="showForm">
+ 
+  <app-form [id]="id" [formGroup]="formGroup" (updatePersona)="aggiornaUser($event)"></app-form>
+
+  <br> <br>
+
+</div>

@@ -63,17 +63,29 @@ export class TableComponent {
     })
   }
 
-  aggiornaUser(data:any) {
-    const i = data.id - 1;
-    this.users.splice(i, 1, data)
-    this.showForm = false;
-  }
+  // aggiornaUser(data:any) {
+  //   const i = data.id - 1;
+  //   this.users.splice(i, 1, data)
+  //   this.showForm = false;
+  // }
 
-  aggiungiUser(data:any) {
-    let arrayIdExistent = [];
-    for (let user of this.users) {
-      arrayIdExistent.push(user.id)
-    }
+  // aggiungiUser(data:any) {
+  //   let arrayIdExistent = this.users.map(us => us.id)
+  //   // for (let user of this.users) {
+  //   //   arrayIdExistent.push(user.id)
+  //   // }
+  //   if (!arrayIdExistent.includes(data.id)) {
+  //     this.users.push(data)
+  //     this.showForm = false;
+  //   }else {
+  //     const i = data.id - 1;
+  //     this.users.splice(i, 1, data)
+  //     this.showForm = false;
+  //   }
+
+  aggiungiModificaUser(data:any) {
+    console.log("ok");
+    let arrayIdExistent = this.users.map(us => us.id)
     if (!arrayIdExistent.includes(data.id)) {
       this.users.push(data)
       this.showForm = false;

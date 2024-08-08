@@ -26,13 +26,13 @@
           <input type="text" id="form1Example2" class="form-control" formControlName="eta"/>
         </div>
       
-        <div class="row" *ngIf="showModifiche">
-          <app-button [text]="text" (buttonClick)="modificaUser()"></app-button>
+        <div class="row">
+          <app-button [text]="text" (buttonClick)="aggiungiModificaUser()"></app-button>
         </div>
          
-        <div class="row" *ngIf="showAggiungi">
+        <!-- <div class="row" *ngIf="showAggiungi">
           <app-button [text]="text" (buttonClick)="aggiungiUser()"></app-button>
-        </div>
+        </div> -->
          
       </form>
       

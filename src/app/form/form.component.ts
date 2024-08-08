@@ -14,10 +14,11 @@ export class FormComponent implements OnInit, OnChanges{
   @Input() id!: number;
   @Input() formGroup!: FormGroup;
   @Input() valore!: string;
-  @Output() modificaPersona = new EventEmitter<any>();
-  @Output() aggiungiPersona = new EventEmitter<any>();
-  showModifiche:boolean = true;
-  showAggiungi:boolean = true;
+  // @Output() modificaPersona = new EventEmitter<any>();
+  // @Output() aggiungiPersona = new EventEmitter<any>();
+  @Output() aggiungiModificaPersona = new EventEmitter<any>();
+  // showModifiche:boolean = true;
+  // showAggiungi:boolean = true;
   text!:string;
 
   ngOnInit(): void {
@@ -30,24 +31,28 @@ export class FormComponent implements OnInit, OnChanges{
     }
   }
 
-  modificaUser() {
-    this.text = "Modifica"
-    this.modificaPersona.emit(this.formGroup.value)
-  }
+  // modificaUser() {
+  //   this.text = "Modifica"
+  //   this.modificaPersona.emit(this.formGroup.value)
+  // }
 
-  aggiungiUser() {
-    this.text ="Aggiungi"
-    this.aggiungiPersona.emit(this.formGroup.value);
+  // aggiungiUser() {
+  //   this.text ="Aggiungi"
+  //   this.aggiungiPersona.emit(this.formGroup.value);
+  // }
+
+  aggiungiModificaUser() {
+    this.aggiungiModificaPersona.emit(this.formGroup.value)
   }
 
   private setVisibility() {
     if(this.valore === "add") {
-      this.showAggiungi = true;
-      this.showModifiche = false;
+      // this.showAggiungi = true;
+      // this.showModifiche = false;
       this.text = "Aggiungi";
     } else if (this.valore === "update") {
-      this.showModifiche = true;
-      this.showAggiungi = false;
+      // this.showModifiche = true;
+      // this.showAggiungi = false;
       this.text = "Modifica";
     }
   }

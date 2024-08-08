@@ -30,7 +30,7 @@
 
 <div class="container m-7" *ngIf="showForm">
  
-  <app-form [id]="id" [formGroup]="formGroup" (updatePersona)="aggiornaUser($event)"></app-form>
+  <app-form [id]="id" [formGroup]="formGroup" (modificaPersona)="aggiornaUser($event)" (aggiungiPersona)="aggiungiUser($event)" [valore]="valore"></app-form>
 
   <br> <br>
 

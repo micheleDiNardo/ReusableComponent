@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 @Component({
@@ -8,14 +8,37 @@ import { FormGroup } from '@angular/forms';
   templateUrl: './form.component.html',
   styleUrl: './form.component.css'
 })
-export class FormComponent {
+export class FormComponent implements OnInit {
+  
 
   @Input() id!: number;
   @Input() formGroup!: FormGroup;
-  @Output() updatePersona = new EventEmitter<any>();
+  @Input() valore!: string;
+  @Output() modificaPersona = new EventEmitter<any>();
+  @Output() aggiungiPersona = new EventEmitter<any>();
+  showModifiche:boolean = true;
+  showAggiungi:boolean = true;
 
-  aggiornaUser() {
-    this.updatePersona.emit(this.formGroup.value)
+  ngOnInit(): void {
+    this.setVisibility();
+  }
+
+  modificaUser() {
+    this.modificaPersona.emit(this.formGroup.value)
+  }
+
+  aggiungiUser() {
+    this.aggiungiPersona.emit(this.formGroup.value);
+  }
+
+  private setVisibility() {
+    if(this.valore === "add") {
+      this.showAggiungi = true;
+      this.showModifiche = false;
+    } else if (this.valore === "update") {
+      this.showModifiche = true;
+      this.showAggiungi = false;
+    }
   }
 
   

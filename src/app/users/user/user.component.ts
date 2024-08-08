@@ -25,8 +25,4 @@ export class UserComponent {
     { id: 10, nome: 'Chiara', cognome: 'Rizzo', eta: 24 }
   ];
 
-  newUser: User = {
-    id: 11, nome: 'Mike', cognome: 'Donald', eta: 25 
-  };
-
 }

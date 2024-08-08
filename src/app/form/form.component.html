@@ -3,10 +3,10 @@
       <h5 class="card-title">Aggiornamento utente con Id: {{id}}</h5>
       <form [formGroup]="formGroup">
         <!-- Id input -->
-        <div data-mdb-input-init class="form-outline mb-4">
+        <!-- <div data-mdb-input-init class="form-outline mb-4">
           <label class="form-label" for="form1Example1">Id</label>
           <input type="text" id="form1Example1" class="form-control" formControlName="id" readonly/>
-        </div>
+        </div> -->
       
         <!-- Nome input -->
         <div data-mdb-input-init class="form-outline mb-4">
@@ -26,9 +26,15 @@
           <input type="text" id="form1Example2" class="form-control" formControlName="eta"/>
         </div>
       
-         <app-button text="Conferma Modifiche" (buttonClick)="aggiornaUser()"></app-button>
+        <div class="row" *ngIf="showModifiche">
+          <app-button text="Conferma Modifiche" (buttonClick)="modificaUser()"></app-button>
+        </div>
+         
+        <div class="row" *ngIf="showAggiungi">
+          <app-button text="Aggiungi User" (buttonClick)="aggiungiUser()"></app-button>
+        </div>
+         
       </form>
       
-
     </div>
   </div>

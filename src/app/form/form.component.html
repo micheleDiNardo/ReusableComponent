@@ -27,11 +27,11 @@
         </div>
       
         <div class="row" *ngIf="showModifiche">
-          <app-button text="Conferma Modifiche" (buttonClick)="modificaUser()"></app-button>
+          <app-button [text]="text" (buttonClick)="modificaUser()"></app-button>
         </div>
          
         <div class="row" *ngIf="showAggiungi">
-          <app-button text="Aggiungi User" (buttonClick)="aggiungiUser()"></app-button>
+          <app-button [text]="text" (buttonClick)="aggiungiUser()"></app-button>
         </div>
          
       </form>

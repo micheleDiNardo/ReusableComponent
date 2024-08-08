@@ -42,7 +42,6 @@ export class TableComponent {
     return idHigher + 1;
   } 
 
-
   deleteUser(i:number) {
     this.users.splice(i,1);
   }
@@ -71,8 +70,20 @@ export class TableComponent {
   }
 
   aggiungiUser(data:any) {
-    this.users.push(data)
-    this.showForm = false;
+    let arrayIdExistent = [];
+    for (let user of this.users) {
+      arrayIdExistent.push(user.id)
+    }
+    if (!arrayIdExistent.includes(data.id)) {
+      this.users.push(data)
+      this.showForm = false;
+    }else {
+      const i = data.id - 1;
+      this.users.splice(i, 1, data)
+      this.showForm = false;
+    }
+    
+    
   }
 
 }

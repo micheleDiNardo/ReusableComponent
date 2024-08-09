@@ -1,8 +1,8 @@
 import { NgModule } from "@angular/core";
 import { TableComponent } from "./table.component";
 import { CommonModule } from "@angular/common";
-import { UserModule } from "../button/button.module";
 import { FormModule } from "../form/form.module";
+import { ButtonModule } from "../button/button.module";
 
 @NgModule({
     declarations: [
@@ -10,7 +10,7 @@ import { FormModule } from "../form/form.module";
     ],
     imports: [
     CommonModule,
-    UserModule,
+    ButtonModule,
     FormModule
 ],
     exports: [

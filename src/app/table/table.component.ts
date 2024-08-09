@@ -64,7 +64,6 @@ export class TableComponent {
   }
 
   aggiungiModificaUser(data:any) {
-    console.log("ok");
     let arrayIdExistent = this.users.map(us => us.id)
     if (!arrayIdExistent.includes(data.id)) {
       this.users.push(data)

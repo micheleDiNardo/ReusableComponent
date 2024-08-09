@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Crea Company</h5>
+      <form [formGroup]="formGroup">
+
+        <!-- Nome input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form1Example2">NomeAzienda</label>
+          <input type="text" id="form1Example2" class="form-control" formControlName="nomeAzienda"/>
+        </div>
+      
+        <!-- Tipologia input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form1Example2">Tipologia</label>
+          <input type="text" id="form1Example2" class="form-control" formControlName="tipologia"/>
+        </div>
+      
+        <!-- Descrizione input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form1Example2">Descrizione</label>
+          <input type="text" id="form1Example2" class="form-control" formControlName="descrizione"/>
+        </div>
+      
+        <div class="row">
+          <app-button text="Conferma" (buttonClick)="addCompany()"></app-button>
+        </div>
+         
+      </form>
+      
+    </div>
+  </div>

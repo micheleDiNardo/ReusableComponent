@@ -13,4 +13,4 @@ import { CommonModule } from "@angular/common";
         ButtonComponent
     ]
   })
-  export class UserModule { }
+  export class ButtonModule { }

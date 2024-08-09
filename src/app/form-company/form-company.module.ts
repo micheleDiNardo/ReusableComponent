@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { FormComponent } from "./form.component";
+import { FormCompanyComponent } from "./form-company.component";
 import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 import { ButtonModule } from "../button/button.module";
+import { FormComponent } from "../form/form.component";
 
 @NgModule({
     declarations: [
-        FormComponent
+        FormCompanyComponent
     ],
     imports: [
     CommonModule,
@@ -14,8 +15,8 @@ import { ButtonModule } from "../button/button.module";
     ButtonModule
 ],
     exports: [
-        FormComponent
+        FormCompanyComponent
 
     ]
   })
-  export class FormModule { }
+  export class FormCompanyModule { }

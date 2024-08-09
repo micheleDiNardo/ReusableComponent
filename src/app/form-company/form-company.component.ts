@@ -3,8 +3,6 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-company',
-  // standalone: true,
-  // imports: [],
   templateUrl: './form-company.component.html',
   styleUrl: './form-company.component.css'
 })

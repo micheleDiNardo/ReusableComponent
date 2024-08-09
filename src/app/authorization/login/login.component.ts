@@ -5,8 +5,6 @@ import { AuthService } from '../AuthService.service';
 
 @Component({
   selector: 'app-login',
-  // standalone: true,
-  // imports: [],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -32,7 +30,7 @@ export class LoginComponent {
   
       this.authService.login(email, password).subscribe({
         next: (data: any) => {
-          this.router.navigate(['/users']); // Esempio di reindirizzamento
+          this.router.navigate(['/users']);
         },
         error: (err) => {
           this.loginFailed = true; 

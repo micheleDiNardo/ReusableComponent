@@ -5,8 +5,6 @@ import { last } from 'rxjs';
 
 @Component({
   selector: 'app-table',
-  // standalone: true,
-  // imports: [],
   templateUrl: './table.component.html',
   styleUrl: './table.component.css'
 })

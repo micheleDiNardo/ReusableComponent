@@ -4,8 +4,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-card',
-  // standalone: true,
-  // imports: [],
   templateUrl: './card.component.html',
   styleUrl: './card.component.css'
 })

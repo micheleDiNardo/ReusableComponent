@@ -3,8 +3,6 @@ import { Company } from './company-model/company.model';
 
 @Component({
   selector: 'app-company',
-  // standalone: true,
-  // imports: [],
   templateUrl: './company.component.html',
   styleUrl: './company.component.css'
 })

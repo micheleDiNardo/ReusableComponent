@@ -1,0 +1,25 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Crea nuovo utente</h5>
+      <form [formGroup]="formGroup">
+
+        <!-- Nome input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form1Example2">Nome</label>
+          <input type="text" id="form1Example2" class="form-control" formControlName="name"/>
+        </div>
+      
+        <!-- job input -->
+        <div data-mdb-input-init class="form-outline mb-4">
+          <label class="form-label" for="form1Example2">Job</label>
+          <input type="text" id="form1Example2" class="form-control" formControlName="job"/>
+        </div>
+      
+        <div class="row">
+          <app-button text="Aggiungi" (buttonClick)="aggiungiUser()"></app-button>
+        </div>
+         
+      </form>
+      
+    </div>
+  </div>

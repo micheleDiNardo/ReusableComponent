@@ -10,6 +10,9 @@ import { AppRoutingModule } from './app.routes';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LoginModule } from './authorization/login/login.module';
 import { HttpClientModule } from '@angular/common/http';
+import { UserApiModule } from './user-api/user-api.module';
+import { UserApiDetailModule } from './user-api/user-api-detail/user-api-detail.module';
+import { FormUserApiModule } from './user-api/form-user-api/form-user-api.module';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import { HttpClientModule } from '@angular/common/http';
     NavBarModule,
     AppRoutingModule,
     LoginModule,
-    HttpClientModule
+    HttpClientModule,
+    UserApiModule,
+    UserApiDetailModule,
+    FormUserApiModule
   ],
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,25 @@
+.clickable-bar {
+    width: 100%;
+    background-color: blue; /* Colore di sfondo */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .numPag {
+    background-color: blue;
+    color: white;
+    font-size: 1.6em
+  }
+
+  .page-item:hover {
+    cursor: pointer;
+  }
+
+  .first-button {
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+  

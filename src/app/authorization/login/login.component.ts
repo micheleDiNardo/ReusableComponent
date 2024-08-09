@@ -26,7 +26,6 @@ export class LoginComponent {
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      console.log({ email, password });
   
       this.authService.login(email, password).subscribe({
         next: (data: any) => {

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="m-4" style="width: 18rem;">
+    <app-button (buttonClick)="setVisibility()" text="Aggiungi user"></app-button>
+ </div>
+ 
+ <div *ngIf="showCard">
+<div class="m-4" style="width: 18rem;">
+   <h1>Utenti</h1> 
+</div>
+
+<div class="d-flex flex-wrap">
+<div class="card m-3" style="width: 18rem;" *ngFor="let data of users; let i = index">
+    <img [src]="data.avatar">
+    <div class="card-body">
+      <h5 class="card-title">{{data.first_name}} {{data.last_name}}</h5>
+      <p class="card-text">{{data.email}}</p>
+      <div class="first-button">
+        <app-button (buttonClick)="goToDetail(data.id)" text="Dettaglio"></app-button>
+      </div>
+      <div class="first-button">
+       <app-button (buttonClick)="deleteUserById(data.id)" text="Elimina"></app-button>
+      </div>
+      
+    </div>
+  </div>
+ 
+</div>
+
+<nav aria-label="...">
+  <ul class="pagination pagination-lg">
+    <li class="page-item disabled" (click)="setNumPag(1)">
+      <a class="page-link" tabindex="-1">1</a>
+    </li>
+    <li class="page-item" (click)="setNumPag(2)">
+      <a class="page-link">2</a>
+    </li>
+  </ul>
+</nav>
+</div>
+
+<div class="form" *ngIf="showForm">
+  <app-form-user-api [formGroup]="formGroup" (aggiungiPersona)="aggiungiUser($event)"></app-form-user-api>
+</div>
+  </div>

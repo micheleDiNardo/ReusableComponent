@@ -19,6 +19,10 @@ export class UserApiComponent implements OnInit {
   showForm:boolean = false;
   showCard:boolean = true;
   formGroup!: FormGroup;
+  currentId?: number;
+  currentUserName!: string;
+  textAggiungiOrModifica: string = "Aggiungi";
+  title!: string;
 
   constructor(
     private userApiService: UserApiService,
@@ -62,6 +66,11 @@ export class UserApiComponent implements OnInit {
   }
 
   setVisibility() {
+    this.textAggiungiOrModifica = "Aggiungi"
+    this.title = "Aggiungi"
+    this.formGroup.patchValue({
+      name: ""
+    });
     if(this.showForm === true) {
       this.showForm = false;
       this.showCard = true;
@@ -82,10 +91,33 @@ export class UserApiComponent implements OnInit {
     let body = new UserCreatedRequest();
     body.name = data.name;
     body.job = data.job;
-    this.userApiService.addUser(body).subscribe(() =>  alert('Utente aggiunto con successo!'))
+    if (this.currentId !== undefined) {
+      this.userApiService.updateUser(body, this.currentId).subscribe((data) =>  { alert('Utente modificato con successo!'), this.currentId = undefined })
+    }else {
+      this.userApiService.addUser(body).subscribe(() =>  alert('Utente aggiunto con successo!'))
+    }
+  
     this.showForm = false;
     this.formGroup.reset()
     this.showCard = true;
+  }
+
+  saveIdToUpdate(id:number) {
+    this.currentId = id;
+    this.userApiService.getUserById(id).subscribe((data) => { 
+      this.currentUserName = data.data.first_name;
+      this.formGroup.patchValue({
+        name: this.currentUserName
+      });
+    })
+    this.textAggiungiOrModifica = "Modifica"
+    this.title = "Modifica User di id: " + id;
+
+  }
+
+  updateUser(id: number) {
+    let body = new UserCreatedRequest();
+
   }
   
 

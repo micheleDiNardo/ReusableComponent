@@ -28,4 +28,8 @@ import { PaginatedUsers, UserApi, UserCreatedRequest } from "../user-api-model/u
       return this.userApiRepository.addUser(body);
     }
 
+    updateUser(body: UserCreatedRequest, id: number): Observable<UserCreatedRequest> {
+      return this.userApiRepository.updateUser(body, id);
+    }
+
   }

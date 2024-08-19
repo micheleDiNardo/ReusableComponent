@@ -10,6 +10,7 @@ export class FormUserApiComponent {
 
   @Input() formGroup!:FormGroup;
   @Output() aggiungiPersona = new EventEmitter<any>();
+  @Input() title!: string;
 
   aggiungiUser() {
     this.aggiungiPersona.emit(this.formGroup.value)

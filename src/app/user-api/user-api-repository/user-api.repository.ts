@@ -26,4 +26,8 @@ import { HttpClient } from "@angular/common/http";
     addUser(body: UserCreatedRequest): Observable<UserCreatedRequest> {
       return this.http.post<UserCreatedRequest>(`${this.apiUrl}`, body);
     }
+
+    updateUser(body: UserCreatedRequest, id: number): Observable<UserCreatedRequest> {
+      return this.http.put<UserCreatedRequest>(`${this.apiUrl}/${id}`, body)
+    }
   }

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="m-4" style="width: 18rem;">
-    <app-button (buttonClick)="setVisibility()" text="Aggiungi user"></app-button>
+    <app-button (buttonClick)="setVisibility()" [text]="textAggiungiOrModifica"></app-button>
  </div>
  
  <div *ngIf="showCard">
@@ -20,7 +20,9 @@
       <div class="first-button">
        <app-button (buttonClick)="deleteUserById(data.id)" text="Elimina"></app-button>
       </div>
-      
+      <div class="first-button">
+        <app-button (buttonClick)="setVisibility()" (buttonClick)="saveIdToUpdate(data.id)" text="Modifica"></app-button>
+       </div>
     </div>
   </div>
  
@@ -39,6 +41,6 @@
 </div>
 
 <div class="form" *ngIf="showForm">
-  <app-form-user-api [formGroup]="formGroup" (aggiungiPersona)="aggiungiUser($event)"></app-form-user-api>
+  <app-form-user-api [formGroup]="formGroup" (aggiungiPersona)="aggiungiUser($event)" [title]="title"></app-form-user-api>
 </div>
   </div>

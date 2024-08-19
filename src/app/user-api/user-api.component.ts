@@ -87,7 +87,7 @@ export class UserApiComponent implements OnInit {
     })
   }
 
-  aggiungiUser(data: any) {
+  aggiungiModificaUser(data: any) {
     let body = new UserCreatedRequest();
     body.name = data.name;
     body.job = data.job;
@@ -114,11 +114,4 @@ export class UserApiComponent implements OnInit {
     this.title = "Modifica User di id: " + id;
 
   }
-
-  updateUser(id: number) {
-    let body = new UserCreatedRequest();
-
-  }
-  
-
 }
